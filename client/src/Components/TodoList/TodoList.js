@@ -25,7 +25,8 @@ class TodoList extends Component {
 
     loadData() {
         load().then(data => {
-                const itemsToInsert = data.data.todoitems.map((item) => {
+            console.log(data);
+                const itemsToInsert = data.todoitems.map((item) => {
                     return {
                         key: item._id,
                         text: item.text,
