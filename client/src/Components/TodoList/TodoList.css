@@ -1,0 +1,155 @@
+.todoListMain {
+    width: 100%;
+    background-color: #fefefe;
+}
+
+ul.theList {
+    padding: 0;
+    margin: 0;
+}
+
+#input_add_block {
+    display: flex;
+    color: black;
+    padding-left: 0;
+    padding-right: 0;
+    border: 0 solid #ededed;
+    border-top-width: 1px;
+    list-style: none;
+}
+
+#input_add_block label {
+    margin: auto 5px auto 15px;
+}
+
+#input_add {
+    height: 50px;
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    font-style: italic;
+    border: none;
+    outline: none;
+    float: right;
+}
+
+@media (max-width: 700px) {
+    #input_add {
+        width: 100%;
+
+    }
+}
+
+#input_add_block form {
+    width: 100%;
+}
+
+#input_add :focus {
+    outline: none;
+}
+
+.filter_button {
+    color: #777777;
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.active {
+    border: 1px solid rgba(175, 47, 47, 0.2);
+}
+
+.active:hover {
+    text-decoration: none;
+    outline: none;
+}
+
+#bottom_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: black;
+    padding: 10px;
+    border: 0 solid #ededed;
+    border-top-width: 1px;
+}
+
+#items_left {
+    color: #8c8c8c;
+    border: 1px solid;
+    margin: 0 10px 0 0;
+    padding: 0;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 3px;
+}
+
+#items_left p {
+    margin: 0;
+}
+
+#filter {
+    display: flex;
+}
+
+#addButton {
+    height: 50px;
+    width: 50px;
+    margin: auto 10px auto auto;
+    border: none;
+    color: #747474;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f7d7d7;
+    border-radius: 12px;
+}
+
+#addButton:focus {
+    outline: none;
+}
+
+#addButton:hover {
+    background-color: #f9c0c0;
+}
+
+#checkAll {
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: auto 10px;
+    color: #a2a2a2;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+    display: inline-block;
+    border: 1px solid;
+}
+
+.showClean {
+    visibility: visible;
+    display: inline-block;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+@media (max-width: 360px) {
+    .Toastify {
+        display: none;
+    }
+}
