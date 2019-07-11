@@ -19,6 +19,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 const path = require('path');
 // Serve static files from the React frontend app
 app.use(express.static(path.join('client/build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 // Anything that doesn't match the above, send back index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join('/client/build/index.html'))
@@ -27,6 +29,11 @@ app.get('*', (req, res) => {
 require('./models/task.model');
 
 require('./routes/task.route')(app);
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
