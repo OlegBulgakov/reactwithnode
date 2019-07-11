@@ -1,7 +1,7 @@
 const TaskController = require('../controllers/task.controller');
 
 module.exports = function (app) {
-    app.get('/', TaskController.getAll);
+    app.get('/all', TaskController.getAll);
     app.post('/', TaskController.postTask);
     app.delete('/:id', TaskController.deleteTask);
     app.delete('/', TaskController.deleteClearCompleted);
