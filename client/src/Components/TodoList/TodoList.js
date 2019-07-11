@@ -24,9 +24,10 @@ class TodoList extends Component {
     }
 
     loadData() {
-        load().then(data => {
-            console.log(data);
-                const itemsToInsert = data.todoitems.map((item) => {
+        axios.get('/all')
+        .then(res => {
+            console.log('get', res);
+                const itemsToInsert = res.data.todoitems.map((item) => {
                     return {
                         key: item._id,
                         text: item.text,
@@ -46,6 +47,7 @@ class TodoList extends Component {
             };
             axios.post(`/`, {newItem})
                 .then((res) => {
+                    console.log('postttt', res)
                     const newItem = {
                         key: res.data.item._id,
                         text: res.data.item.text,

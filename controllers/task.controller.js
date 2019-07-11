@@ -17,10 +17,10 @@ function postTask(req, res) {
     }).then((task) => {
       res.status(200).json({
         item: task
-      })
+      });
       res.send()
     })
-};
+}
 
 function deleteTask(req, res) {
     Task.deleteOne({
@@ -33,7 +33,7 @@ function deleteTask(req, res) {
       }
       res.send()
     })
-};
+}
 
 function deleteClearCompleted (req, res) {
     Task.deleteMany({
@@ -46,7 +46,7 @@ function deleteClearCompleted (req, res) {
       }
       res.send()
     })
-};
+}
 
 function checkbox(req, res) {
     Task.updateOne({
@@ -62,7 +62,7 @@ function checkbox(req, res) {
       }
       res.send()
     })
-};
+}
 
 function changeData(req, res) {
     Task.updateOne({
@@ -78,7 +78,7 @@ function changeData(req, res) {
       }
       res.send()
     })
-};
+}
 
 function checkAll(req, res) {
     if (req.body.checkAll === false) {
@@ -107,7 +107,7 @@ function checkAll(req, res) {
       })
     }
     res.send()
-};
+}
 
 module.exports = {
     getAll,
@@ -117,4 +117,4 @@ module.exports = {
     checkbox,
     changeData,
     checkAll,
-}
+};

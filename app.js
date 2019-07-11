@@ -16,17 +16,17 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-const path = require('path')
-// Serve static files from the React frontend app
-app.use(express.static(path.join('client/build')))
-// Anything that doesn't match the above, send back index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join('/client/build/index.html'))
-})
+// const path = require('path');
+// // Serve static files from the React frontend app
+// app.use(express.static(path.join('client/build')));
+// // Anything that doesn't match the above, send back index.html
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join('/client/build/index.html'))
+// });
 
 require('./models/task.model');
 
-require('./routes/task.route')(app)
+require('./routes/task.route')(app);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
