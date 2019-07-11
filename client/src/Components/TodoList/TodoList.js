@@ -44,7 +44,7 @@ class TodoList extends Component {
                 text: this.state.inputValue,
                 checked: false
             };
-            axios.post(`/`, {newItem})
+            axios.post(`/api/todos`, {newItem})
                 .then((res) => {
                     const newItem = {
                         key: res.data.item._id,
@@ -65,7 +65,7 @@ class TodoList extends Component {
     };
 
     deleteItem(key) {
-        axios.delete(`/${key}`)
+        axios.delete(`/api/todos/${key}`)
             .then((res) => {
                 if (res.status === 200) {
                     const filteredItems = this.state.items.filter((item) => {
@@ -83,7 +83,7 @@ class TodoList extends Component {
         const filterForFetch = this.state.items.filter((item) => {
             return (item.checked === true)
         });
-        axios.delete(`/`, {filterForFetch})
+        axios.delete(`/api/todos`, {filterForFetch})
             .then((res) => {
                 if (res.status === 200) {
                     const filtered = this.state.items.filter((item) => {
@@ -102,7 +102,7 @@ class TodoList extends Component {
             return (item.key === key)
         });
         itemToCheck.text = data;
-        axios.put(`/`, {itemToCheck})
+        axios.put(``, {itemToCheck})
             .then((res) => {
                 if (res.status === 200) {
                     if (data.trim().length !== 0) {
@@ -121,7 +121,7 @@ class TodoList extends Component {
             return (item.key === key)
         });
         itemToCheck.checked = !itemToCheck.checked;
-        axios.put(`/`, {itemToCheck})
+        axios.put(`/api/todos`, {itemToCheck})
             .then((res) => {
                 if (res.status === 200) {
                     const itemToCheck = this.state.items.find((item) => {
@@ -142,7 +142,7 @@ class TodoList extends Component {
         const checkAll = this.state.items.every((item) => {
             return item.checked === true;
         });
-        axios.put(`setAll`, {checkAll})
+        axios.put(`/api/todos/setAll`, {checkAll})
             .then((res) => {
                 if (res.status === 200) {
                     if (checkAll) {

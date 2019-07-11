@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const Task = mongoose.model('todoitem');
 
 function getAll(req, res) {
+    console.log('**********');
+
+
     Task.find({}).then((data) => {
         res.json({todoitems: data});
     }, (err) => {
@@ -11,6 +14,9 @@ function getAll(req, res) {
 }
 
 function postTask(req, res) {
+
+    console.log('zzzzzzzz');
+
     Task.create({
       text: req.body.newItem.text,
       checked: req.body.newItem.checked
